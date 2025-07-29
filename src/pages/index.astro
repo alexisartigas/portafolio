@@ -8,31 +8,40 @@ import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
 
 // Obtener variables de entorno
+const portfolioShortTitle =
+  import.meta.env.PORTFOLIO_SHORT_TITLE || "Portafolio";
 const portfolioName = import.meta.env.PORTFOLIO_NAME || "Tu Nombre";
 const portfolioSurname = import.meta.env.PORTFOLIO_SURNAME || "Tu Apellido";
-const portfolioTitle = import.meta.env.PORTFOLIO_TITLE || "Desarrollador Full Stack";
-const portfolioDescription = import.meta.env.PORTFOLIO_DESCRIPTION || "Desarrollador Full Stack especializado en React, Node.js y Python";
-const portfolioEmail = import.meta.env.PORTFOLIO_EMAIL || "tu.email@ejemplo.com";
+const portfolioTitle =
+  import.meta.env.PORTFOLIO_TITLE || "Desarrollador Full Stack";
+const portfolioDescription =
+  import.meta.env.PORTFOLIO_DESCRIPTION ||
+  "Desarrollador Full Stack especializado en React, Node.js y Python";
+const portfolioEmail =
+  import.meta.env.PORTFOLIO_EMAIL || "tu.email@ejemplo.com";
 const portfolioPhone = import.meta.env.PORTFOLIO_PHONE || "+1234567890";
-const portfolioAddress = import.meta.env.PORTFOLIO_ADDRESS || "Tu Ciudad, Tu País";
+const portfolioAddress =
+  import.meta.env.PORTFOLIO_ADDRESS || "Tu Ciudad, Tu País";
 
 const fullName = `${portfolioName} ${portfolioSurname}`;
+const shortTitle = `${portfolioShortTitle}`;
 ---
 
 <BaseLayout title={`${fullName} - ${portfolioTitle}`}>
-	<Navigation fullName={fullName} />
-	<Hero 
-		fullName={fullName}
-		portfolioTitle={portfolioTitle}
-		portfolioDescription={portfolioDescription}
-		portfolioName={portfolioName}
-		portfolioSurname={portfolioSurname}
-	/>
-	<About />
-	<Skills />
-	<Contact 
-		portfolioEmail={portfolioEmail}
-		portfolioPhone={portfolioPhone}
-		portfolioAddress={portfolioAddress}
-	/>
+  <Navigation fullName={fullName} shortTitle={shortTitle} />
+  <Hero
+    fullName={fullName}
+    shortTitle={shortTitle}
+    portfolioTitle={portfolioTitle}
+    portfolioDescription={portfolioDescription}
+    portfolioName={portfolioName}
+    portfolioSurname={portfolioSurname}
+  />
+  <About />
+  <Skills />
+  <Contact
+    portfolioEmail={portfolioEmail}
+    portfolioPhone={portfolioPhone}
+    portfolioAddress={portfolioAddress}
+  />
 </BaseLayout>

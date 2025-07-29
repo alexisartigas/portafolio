@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
-  site: 'https://tu-nombre.github.io',
+  site: 'https://portafolio-alexis-artigas.vercel.app/',
   
   vite: {
     plugins: [tailwindcss()],
@@ -18,6 +18,7 @@ export default defineConfig({
       'process.env.PORTFOLIO_PHONE': JSON.stringify(process.env.PORTFOLIO_PHONE),
       'process.env.PORTFOLIO_EMAIL': JSON.stringify(process.env.PORTFOLIO_EMAIL),
       'process.env.PORTFOLIO_ADDRESS': JSON.stringify(process.env.PORTFOLIO_ADDRESS),
+      'process.env.PORTFOLIO_SHORT_TITLE': JSON.stringify(process.env.PORTFOLIO_SHORT_TITLE),
       'process.env.PORTFOLIO_TITLE': JSON.stringify(process.env.PORTFOLIO_TITLE),
       'process.env.PORTFOLIO_DESCRIPTION': JSON.stringify(process.env.PORTFOLIO_DESCRIPTION),
     },
