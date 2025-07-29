@@ -1,0 +1,25 @@
+---
+// src/components/ProjectCard.astro
+const { project } = Astro.props;
+const { data, slug } = project;
+---
+
+<article class="project-card">
+    <img src={data.image} alt={data.title} />
+    <div class="project-content">
+        <h3>{data.title}</h3>
+        <p>{data.description}</p>
+        <div class="tech-stack">
+            {
+                data.technologies.map((tech) => (
+                    <span class="tech-badge">{tech}</span>
+                ))
+            }
+        </div>
+        <div class="project-links">
+            <a href={data.demo} target="_blank">Demo</a>
+            <a href={data.github} target="_blank">GitHub</a>
+            <a href={`/projects/${slug}`}>Detalles</a>
+        </div>
+    </div>
+</article>
