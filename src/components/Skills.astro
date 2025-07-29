@@ -1,0 +1,148 @@
+---
+// src/components/Skills.astro
+---
+
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Tecnologías & Habilidades</h2>
+    <div class="skills-categories">
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <div class="skills-grid">
+          {
+            ["React", "TypeScript", "Next.js", "Tailwind CSS", "Astro"].map((skill) => (
+              <span class="skill-badge frontend">{skill}</span>
+            ))
+          }
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <div class="skills-grid">
+          {
+            ["Node.js", "Python", "Express", "FastAPI", "PostgreSQL"].map((skill) => (
+              <span class="skill-badge backend">{skill}</span>
+            ))
+          }
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Herramientas</h3>
+        <div class="skills-grid">
+          {
+            ["Git", "Docker", "AWS", "Figma", "VS Code"].map((skill) => (
+              <span class="skill-badge tools">{skill}</span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.skills {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1f2937;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #6366f1;
+  border-radius: 2px;
+}
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.skill-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skill-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+}
+
+.skill-badge.frontend {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.skill-badge.backend {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.skill-badge.tools {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .skills-categories {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+</style>
